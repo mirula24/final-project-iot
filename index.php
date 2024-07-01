@@ -1,6 +1,8 @@
 <?php
 require('connect.php');
-
+$sql1 = mysqli_query($connect,"SELECT * FROM esp32_record WHERE sensor = 'esp32_1' ORDER BY id DESC limit 1 ");
+$sql2 = mysqli_query($connect,"SELECT * FROM esp32_record WHERE sensor = 'esp32_2' ORDER BY id DESC limit 1 ");
+$sql3 = mysqli_query($connect,"SELECT * FROM esp32_record WHERE sensor = 'esp32_3' ORDER BY id DESC limit 1 ");
 
 
 ?>
@@ -34,21 +36,30 @@ require('connect.php');
                     Sensor 1
                 </h2>
                 <h3 class="mx-auto text-center my-auto text-lg">
-                Humidity
+                    Humidity
                 </h3>
                 <h3 class="mx-auto text-center my-auto text-2xl">
-                    30 %
+                <?php foreach($sql1 as $row):
+                    echo $row['kelembapan'];
+                    endforeach;
+                   ?> %                    
                 </h3>
                 <h3 class="mx-auto text-center my-auto text-lg">
                 Temperature
                 </h3>
                 <h3 class="mx-auto text-center my-auto text-2xl">
-                    25 deg
+                <?php foreach($sql1 as $row):
+                    echo $row['suhu'];
+                    endforeach;
+                   ?> deg
                 </h3><h3 class="mx-auto text-center my-auto text-lg">
                 Amonia Level
                 </h3>
                 <h3 class="mx-auto text-center my-auto text-2xl ">
-                    15 %
+                <?php foreach($sql1 as $row):
+                    echo $row['gas'];
+                    endforeach;
+                   ?> %
                 </h3>
             </div>
             <div class="w-full py-10 md:flex md:flex-wrap bg-primarybg text-primaryText rounded-lg " >
@@ -59,18 +70,27 @@ require('connect.php');
                 Humidity
                 </h3>
                 <h3 class="mx-auto text-center my-auto text-2xl">
-                    30 %
+                <?php foreach($sql2 as $row):
+                    echo $row['kelembapan'];
+                    endforeach;
+                   ?> % 
                 </h3>
                 <h3 class="mx-auto text-center my-auto text-lg">
                 Temperature
                 </h3>
                 <h3 class="mx-auto text-center my-auto text-2xl">
-                    25 deg
+                <?php foreach($sql2 as $row):
+                    echo $row['suhu'];
+                    endforeach;
+                   ?> deg
                 </h3><h3 class="mx-auto text-center my-auto text-lg">
                 Amonia Level
                 </h3>
                 <h3 class="mx-auto text-center my-auto text-2xl">
-                    15 %
+                <?php foreach($sql2 as $row):
+                    echo $row['gas'];
+                    endforeach;
+                   ?> % 
                 </h3>
             </div>
             <div class="w-full py-10 md:flex md:flex-wrap text-primarybg bg-primaryText rounded-lg" >
@@ -81,18 +101,27 @@ require('connect.php');
                 Humidity
                 </h3>
                 <h3 class="mx-auto text-center my-auto text-2xl">
-                    30 %
+                <?php foreach($sql3 as $row):
+                    echo $row['kelembapan'];
+                    endforeach;
+                   ?> % 
                 </h3>
                 <h3 class="mx-auto text-center my-auto text-lg">
                 Temperature
                 </h3>
                 <h3 class="mx-auto text-center my-auto text-2xl">
-                    25 deg
+                <?php foreach($sql3 as $row):
+                    echo $row['suhu'];
+                    endforeach;
+                   ?> deg
                 </h3><h3 class="mx-auto text-center my-auto text-lg">
                 Amonia Level
                 </h3>
                 <h3 class="mx-auto text-center my-auto text-2xl">
-                    15 %
+                <?php foreach($sql3 as $row):
+                    echo $row['gas'];
+                    endforeach;
+                   ?> % 
                 </h3>
             </div>
 
