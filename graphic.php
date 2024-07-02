@@ -1,4 +1,10 @@
 <?php
+session_start();
+
+if( !isset($_SESSION["login"]) ) {
+	header("Location: login.php");
+	exit;
+}
 require('connect.php');
 $data1 = mysqli_query($connect,"SELECT kelembapan,suhu,gas, time(waktu) as jam FROM esp32_record Where sensor = 'esp32_1'limit 10");
 $data2 = mysqli_query($connect,"SELECT kelembapan,suhu,gas, time(waktu) as jam FROM esp32_record Where sensor = 'esp32_2'limit 10");

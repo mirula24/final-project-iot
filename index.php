@@ -1,4 +1,11 @@
 <?php
+
+session_start();
+
+if( !isset($_SESSION["login"]) ) {
+	header("Location: login.php");
+	exit;
+}
 require('connect.php');
 $sql1 = mysqli_query($connect,"SELECT * FROM esp32_record WHERE sensor = 'esp32_1' ORDER BY id DESC limit 1 ");
 $sql2 = mysqli_query($connect,"SELECT * FROM esp32_record WHERE sensor = 'esp32_2' ORDER BY id DESC limit 1 ");

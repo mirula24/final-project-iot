@@ -31,7 +31,7 @@ function update($data){
 }
 
 
-function registrasi($data) {
+function register($data) {
 
 
 	global $connect;
@@ -58,10 +58,12 @@ function registrasi($data) {
 		      </script>";
 		return false;
 	}
+	// encripsi password
+	$password = password_hash($password, PASSWORD_DEFAULT);
 
 
 	// tambahkan userbaru ke database
-	mysqli_query($connect, "INSERT INTO users (username,password) VALUES('$username', '$password')");
+	mysqli_query($connect, "INSERT INTO users (id,username,password) VALUES(null,'$username', '$password')");
 
 	return mysqli_affected_rows($connect);
 

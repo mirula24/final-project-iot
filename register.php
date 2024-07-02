@@ -6,6 +6,7 @@ if( isset($_POST["register"]) ) {
 	if( register($_POST) > 0 ) {
 		echo "<script>
 				alert('user baru berhasil ditambahkan!');
+            window.location.href = 'login.php';
 			  </script>";
 	} else {
 		echo mysqli_error($connect);
@@ -34,7 +35,7 @@ if( isset($_POST["register"]) ) {
     </a>
     <div class="bg-white shadow rounded-lg lg:flex items-center justify-center md:mt-0 w-full lg:max-w-screen-lg 2xl:max:max-w-screen-lg xl:p-0">
 	<div class="hidden lg:flex w-2/3">
-		<img class="rounded-l-lg" src="./src/IoT.jpeg" alt="login image">
+		<img class="rounded-l-lg" src="./src/reg.jpg" alt="login image">
 	</div>
 	<div class="w-full p-6 sm:p-8 lg:p-16 lg:py-0 space-y-8">
 		<!-- Authentication form goes here -->
@@ -62,7 +63,8 @@ if( isset($_POST["register"]) ) {
    </div>
     
    <button type="submit" name="register"
-      class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-base px-5 py-3 w-full sm:w-auto text-center">Register</button>
+      class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-base px-10 py-3 w-full sm:w-auto text-center">Register</button>
+      <a href="login.php"  class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-base px-5 py-3 w-full sm:w-auto text-center">Back</a>
   
 </form>
 	</div>
