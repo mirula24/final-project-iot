@@ -22,7 +22,7 @@
                                     Members of Team</a>
                             </li>
                             <li class="group">
-                                <a href="caraKerja.php" class="text-base py-2 flex mx-8 group-hover:text-primary">
+                                <a href="mechanism.php" class="text-base py-2 flex mx-8 group-hover:text-primary">
                                     Mechanism</a>
                             </li>
                             <li class="group">

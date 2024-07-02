@@ -26,7 +26,7 @@ if( isset($_POST["register"]) ) {
     <link rel="stylesheet" href="https://unpkg.com/flowbite@latest/dist/flowbite.min.css" />
 </head>
 <body> 
-<div class="mx-auto md:h-screen flex flex-col justify-center items-center px-6 pt-8 pt:mt-0">
+<div class="mx-auto md:h-screen flex flex-col justify-center items-center px-6 pt-8 pt:mt-0 pb-10">
     <!-- content will go here -->
     <div class="mx-auto md:h-screen flex flex-col justify-center items-center px-6 pt-8 pt:mt-0">
     <a href="#" class="text-2xl font-semibold flex justify-center items-center mb-8 lg:mb-10">
@@ -42,7 +42,7 @@ if( isset($_POST["register"]) ) {
         <h2 class="text-2xl lg:text-3xl font-bold text-gray-900">
    Sign UP to platform
 </h2>
-<form class="mt-8 space-y-6" action="" method="post">
+<form class="mt-8 space-y-6 pb-10" action="" method="post">
    <div>
       <label for="username" class="text-sm font-medium text-gray-900 block mb-2">Username</label>
       <input type="text" name="username" id="username"
@@ -64,9 +64,9 @@ if( isset($_POST["register"]) ) {
     
    <button type="submit" name="register"
       class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-base px-10 py-3 w-full sm:w-auto text-center">Register</button>
-      <a href="login.php"  class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-base px-5 py-3 w-full sm:w-auto text-center">Back</a>
+      <a href="login.php"  class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-base px-14 py-4 w-full mx-10 sm:w-auto text-center">Back</a>
   
-</form>
+         </form>
 	</div>
 </div>
 

@@ -88,7 +88,7 @@ if( isset($_POST["login"]) ) {
         <h2 class="text-2xl lg:text-3xl font-bold text-gray-900">
    Sign in to platform
 </h2>
-<form class="mt-8 space-y-6" action="" method="post">
+<form class="mt-8 space-y-6 pb-10" action="" method="post">
    <div>
    <?php if( isset($error) ) : ?>
 	<p style="color: red; font-style: italic;">username / password salah</p>

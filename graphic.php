@@ -33,7 +33,7 @@ $data3 = mysqli_query($connect,"SELECT kelembapan,suhu,gas, time(waktu) as jam  
                     Graphic of Record
                 </h2>
             </div>
-                <div class="w-full lg:w-1/3 px-4  self-center py-10">
+                <div class="w-full lg:w-1/3 px-4  self-center pb-10">
                     <h3 class="font-bold text-center text- md:text-2xl pb-4">Humidity</h3>
                     <canvas id="myChart1" class="w-full self-center mx-auto bg-white rounded"></canvas>
                 </div>
@@ -205,5 +205,6 @@ var ctx3 = document.getElementById('myChart3').getContext('2d');
 });
 </script>
 <script src="src/script.js"></script>
+
 </body>
 </html>

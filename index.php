@@ -23,6 +23,7 @@ $sql3 = mysqli_query($connect,"SELECT * FROM esp32_record WHERE sensor = 'esp32_
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Final Project</title>
     <link href="./src/output.css" rel="stylesheet">
+
 </head>
 <body class="bg-blue-100">
     <?php
