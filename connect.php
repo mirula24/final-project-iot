@@ -1,11 +1,19 @@
 <?php 
 $connect = mysqli_connect('localhost','root','','esp32');
 
-
+function query($data){
+	global $connect;
+	$result = mysqli_query($connect, $data);
+	$rows = [];
+	while( $row = mysqli_fetch_assoc($result) ) {
+		$rows[] = $row;
+	}
+	return $rows;
+}
 
 function update($data){
     global $connect;
-    $sensor = $_POST['name'];
+    $sensor = $_POST['sensor'];
     $klp = $_POST['humidity'];
     $sh = $_POST['temperature'];
     $gas = $_POST['gas'];

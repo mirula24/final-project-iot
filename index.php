@@ -139,6 +139,11 @@ $sql3 = mysqli_query($connect,"SELECT * FROM esp32_record WHERE sensor = 'esp32_
                     focus:outline-none hover:bg-primarybg hover:text-primaryText focus:ring-4 focus:ring-gray-100 font-medium rounded-full 
                     text-sm px-10 py-2.5 me-2 mb-2 self-center"><a href="graphic.php">Graphic Record</a></button>
                 </div>
+                <div class="mx-auto justify-center">
+                    <button type="button" class="text-gray-900 bg-primaryText border border-gray-300 
+                    focus:outline-none hover:bg-primarybg hover:text-primaryText focus:ring-4 focus:ring-gray-100 font-medium rounded-full 
+                    text-sm px-10 py-2.5 me-2 mb-2 self-center"><a href="record.php">Table Record</a></button>
+                </div>
             </div>
         </div>
     </div>

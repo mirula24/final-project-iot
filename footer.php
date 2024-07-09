@@ -1,5 +1,5 @@
 <footer class="bg-primarybg text-primaryText ">
-    <div class="px-10 py-10 md:flex flex-wrap justify-end">
+    <div class="px-10 py-10 md:flex flex-wrap justify-center">
         <div class="mx-auto">
             <div class="mx-auto">
                 <img src="./src/pnp.png" alt="" class="w-[150px] opacity-20 hover:opacity-100 duration-150">

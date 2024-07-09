@@ -48,6 +48,18 @@ $data3 = mysqli_query($connect,"SELECT kelembapan,suhu,gas, time(waktu) as jam  
             </div>
         </div>
     </section>
+    <div class="w-full flex flex-wrap p-10">
+                <div class="mx-auto justify-center">
+                    <button type="button" class="text-gray-900 bg-primaryText border border-gray-300 
+                    focus:outline-none hover:bg-primarybg hover:text-primaryText focus:ring-4 focus:ring-gray-100 font-medium rounded-full 
+                    text-sm px-10 py-2.5 me-2 mb-2 self-center"><a href="index.php">Real-Time</a></button>
+                </div>
+                <div class="mx-auto justify-center">
+                    <button type="button" class="text-gray-900 bg-primaryText border border-gray-300 
+                    focus:outline-none hover:bg-primarybg hover:text-primaryText focus:ring-4 focus:ring-gray-100 font-medium rounded-full 
+                    text-sm px-10 py-2.5 me-2 mb-2 self-center"><a href="record.php">Table Record</a></button>
+                </div>
+            </div>
 
 
 <?php
