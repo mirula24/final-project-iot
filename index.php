@@ -7,9 +7,9 @@ if (!isset($_SESSION["login"])) {
     exit;
 }
 require('connect.php');
-$sql1 = mysqli_query($connect, "SELECT * FROM esp32_record WHERE sensor = 1 ORDER BY id DESC limit 1 ");
-$sql2 = mysqli_query($connect, "SELECT * FROM esp32_record WHERE sensor = 2 ORDER BY id DESC limit 1 ");
-$sql3 = mysqli_query($connect, "SELECT * FROM esp32_record WHERE sensor = 3 ORDER BY id DESC limit 1 ");
+$sql1 = mysqli_query($connect, "SELECT * FROM real_time WHERE sensor = 1 ORDER BY id DESC limit 1 ");
+$sql2 = mysqli_query($connect, "SELECT * FROM real_time WHERE sensor = 2 ORDER BY id DESC limit 1 ");
+$sql3 = mysqli_query($connect, "SELECT * FROM real_time WHERE sensor = 3 ORDER BY id DESC limit 1 ");
 
 
 ?>
@@ -48,7 +48,7 @@ $sql3 = mysqli_query($connect, "SELECT * FROM esp32_record WHERE sensor = 3 ORDE
                     <h3 class="mx-auto text-center my-auto text-lg">
                         Humidity
                     </h3>
-                    <h3 class="mx-auto text-center my-auto text-2xl">
+                    <h3 class="mx-auto text-center my-auto text-2xl" id="humidity1">
                         <?php foreach ($sql1 as $row) :
                             echo $row['kelembapan'];
                         endforeach;
@@ -57,7 +57,7 @@ $sql3 = mysqli_query($connect, "SELECT * FROM esp32_record WHERE sensor = 3 ORDE
                     <h3 class="mx-auto text-center my-auto text-lg">
                         Temperature
                     </h3>
-                    <h3 class="mx-auto text-center my-auto text-2xl">
+                    <h3 class="mx-auto text-center my-auto text-2xl" id="temperature1">
                         <?php foreach ($sql1 as $row) :
                             echo $row['suhu'];
                         endforeach;
@@ -66,7 +66,7 @@ $sql3 = mysqli_query($connect, "SELECT * FROM esp32_record WHERE sensor = 3 ORDE
                     <h3 class="mx-auto text-center my-auto text-lg">
                         Amonia Level
                     </h3>
-                    <h3 class="mx-auto text-center my-auto text-2xl ">
+                    <h3 class="mx-auto text-center my-auto text-2xl " id="ammonia1">
                         <?php foreach ($sql1 as $row) :
                             echo $row['gas'];
                         endforeach;
@@ -80,7 +80,7 @@ $sql3 = mysqli_query($connect, "SELECT * FROM esp32_record WHERE sensor = 3 ORDE
                     <h3 class="mx-auto text-center my-auto text-lg ">
                         Humidity
                     </h3>
-                    <h3 class="mx-auto text-center my-auto text-2xl">
+                    <h3 class="mx-auto text-center my-auto text-2xl" id="humidity2">
                         <?php foreach ($sql2 as $row) :
                             echo $row['kelembapan'];
                         endforeach;
@@ -89,7 +89,7 @@ $sql3 = mysqli_query($connect, "SELECT * FROM esp32_record WHERE sensor = 3 ORDE
                     <h3 class="mx-auto text-center my-auto text-lg">
                         Temperature
                     </h3>
-                    <h3 class="mx-auto text-center my-auto text-2xl">
+                    <h3 class="mx-auto text-center my-auto text-2xl" id="temperature2">
                         <?php foreach ($sql2 as $row) :
                             echo $row['suhu'];
                         endforeach;
@@ -98,7 +98,7 @@ $sql3 = mysqli_query($connect, "SELECT * FROM esp32_record WHERE sensor = 3 ORDE
                     <h3 class="mx-auto text-center my-auto text-lg">
                         Amonia Level
                     </h3>
-                    <h3 class="mx-auto text-center my-auto text-2xl">
+                    <h3 class="mx-auto text-center my-auto text-2xl" id="ammoni2">
                         <?php foreach ($sql2 as $row) :
                             echo $row['gas'];
                         endforeach;
@@ -112,7 +112,7 @@ $sql3 = mysqli_query($connect, "SELECT * FROM esp32_record WHERE sensor = 3 ORDE
                     <h3 class="mx-auto text-center my-auto text-lg">
                         Humidity
                     </h3>
-                    <h3 class="mx-auto text-center my-auto text-2xl">
+                    <h3 class="mx-auto text-center my-auto text-2xl" id="humidity3">
                         <?php foreach ($sql3 as $row) :
                             echo $row['kelembapan'];
                         endforeach;
@@ -121,7 +121,7 @@ $sql3 = mysqli_query($connect, "SELECT * FROM esp32_record WHERE sensor = 3 ORDE
                     <h3 class="mx-auto text-center my-auto text-lg">
                         Temperature
                     </h3>
-                    <h3 class="mx-auto text-center my-auto text-2xl">
+                    <h3 class="mx-auto text-center my-auto text-2xl" id="temperature3">
                         <?php foreach ($sql3 as $row) :
                             echo $row['suhu'];
                         endforeach;
@@ -130,7 +130,7 @@ $sql3 = mysqli_query($connect, "SELECT * FROM esp32_record WHERE sensor = 3 ORDE
                     <h3 class="mx-auto text-center my-auto text-lg">
                         Amonia Level
                     </h3>
-                    <h3 class="mx-auto text-center my-auto text-2xl">
+                    <h3 class="mx-auto text-center my-auto text-2xl" id="ammonia3">
                         <?php foreach ($sql3 as $row) :
                             echo $row['gas'];
                         endforeach;
@@ -163,6 +163,40 @@ $sql3 = mysqli_query($connect, "SELECT * FROM esp32_record WHERE sensor = 3 ORDE
 
 
     <script src="src/script.js"></script>
+    <script>
+        function ambilData(sensor) {
+            fetch(`automatic.php?sensor=${sensor}`)
+                .then(response => response.json())
+                .then(data => {
+                    if (sensor === 1) {
+                        document.getElementById('humidity1').innerText = data.kelembapan + ' %';
+                        document.getElementById('temperature1').innerText = data.suhu + ' deg';
+                        document.getElementById('ammonia1').innerText = data.gas + ' %';
+                    } else if (sensor === 2) {
+                        document.getElementById('humidity2').innerText = data.kelembapan + ' %';
+                        document.getElementById('temperature2').innerText = data.suhu + ' deg';
+                        document.getElementById('ammonia2').innerText = data.gas + ' %';
+                    } else if (sensor === 3) {
+                        document.getElementById('humidity3').innerText = data.kelembapan + ' %';
+                        document.getElementById('temperature3').innerText = data.suhu + ' deg';
+                        document.getElementById('ammonia3').innerText = data.gas + ' %';
+                    }
+                })
+                .catch(error => console.error('Error:', error));
+        }
+
+        // Ambil data pertama kali saat halaman dimuat
+        ambilData(1);
+        ambilData(2);
+        ambilData(3);
+
+        // Jadwalkan pengambilan data setiap 30 menit
+
+        setInterval(() => ambilData(1), 1000);
+        setInterval(() => ambilData(2), 1000);
+        setInterval(() => ambilData(3), 1000);
+    </script>
+
 </body>
 
 </html>

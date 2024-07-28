@@ -111,7 +111,7 @@ if (isset($_POST["login"])) {
                         <button type="submit" name="login" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-base px-5 py-3 w-full sm:w-auto text-center">Login
                             to your account</button>
                         <div class="text-sm font-medium text-gray-500">
-                            Not registered? <a class="text-blue-700 hover:underline mb-10">Register</a>
+                            Not registered? <a class="text-blue-700 hover:underline mb-10" href="register.php">Register</a>
                         </div>
                     </form>
                 </div>
