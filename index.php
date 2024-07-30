@@ -33,126 +33,116 @@ $sql3 = mysqli_query($connect, "SELECT * FROM real_time WHERE sensor = 3 ORDER B
     ?>
 
 
-    <section>
-        <div class="container mx-auto items-center">
-            <div class="flex flex-wrap ">
-                <div class="w-full lg:pt-36 pt-24">
-                    <h1 class="text-2xl  text-primarybg bg-green text-center py-5 font-bold rounded-lg lg:mt-5">
-                        Real-Time Monitor
-                    </h1>
-                </div>
-                <div class="w-full py-10 md:flex md:flex-wrap text-primarybg bg-primaryText rounded-lg">
-                    <h2 class="mx-auto text-2xl text-center my-auto">
-                        Sensor 1
-                    </h2>
-                    <h3 class="mx-auto text-center my-auto text-lg">
+<section class="pt-24" >
+    <div class="container mx-auto items-center ">
+        <div class="flex flex-col lg:flex-row bg-white rounded-md">
+            <div class="w-full lg:pt-36 pt-24">
+                <h1 class="text-2xl text-primary bg-header text-center py-5 font-bold rounded-lg lg:mt-5">
+                    Real-Time Monitor
+                </h1>
+            </div>
+            <div class="w-full lg:w-1/3 py-10 text-primary bg-section border-2 border-gray-300 rounded-lg my-4 lg:mx-2">
+                <h2 class="mx-auto text-2xl text-center my-auto font-bold">
+                    Sensor 1
+                </h2>
+                <div class="w-full p-4 border-t border-gray-300 mt-4">
+                    <h3 class="text-center my-auto text-lg font-semibold">
                         Humidity
                     </h3>
-                    <h3 class="mx-auto text-center my-auto text-2xl" id="humidity1">
-                        <?php foreach ($sql1 as $row) :
-                            echo $row['kelembapan'];
-                        endforeach;
-                        ?> %
-                    </h3>
-                    <h3 class="mx-auto text-center my-auto text-lg">
-                        Temperature
-                    </h3>
-                    <h3 class="mx-auto text-center my-auto text-2xl" id="temperature1">
-                        <?php foreach ($sql1 as $row) :
-                            echo $row['suhu'];
-                        endforeach;
-                        ?> deg
-                    </h3>
-                    <h3 class="mx-auto text-center my-auto text-lg">
-                        Amonia Level
-                    </h3>
-                    <h3 class="mx-auto text-center my-auto text-2xl " id="ammonia1">
-                        <?php foreach ($sql1 as $row) :
-                            echo $row['gas'];
-                        endforeach;
-                        ?> %
+                    <h3 class="text-center my-auto text-2xl" id="humidity1">
+                        <?php foreach ($sql1 as $row) : echo $row['kelembapan']; endforeach; ?> %
                     </h3>
                 </div>
-                <div class="w-full py-10 md:flex md:flex-wrap bg-primarybg text-primaryText rounded-lg ">
-                    <h2 class="mx-auto text-2xl text-center my-auto">
-                        Sensor 2
-                    </h2>
-                    <h3 class="mx-auto text-center my-auto text-lg ">
+                <div class="w-full p-4 border-t border-gray-300">
+                    <h3 class="text-center my-auto text-lg font-semibold">
+                        Temperature
+                    </h3>
+                    <h3 class="text-center my-auto text-2xl" id="temperature1">
+                        <?php foreach ($sql1 as $row) : echo $row['suhu']; endforeach; ?> deg
+                    </h3>
+                </div>
+                <div class="w-full p-4 border-t border-gray-300">
+                    <h3 class="text-center my-auto text-lg font-semibold">
+                        Amonia Level
+                    </h3>
+                    <h3 class="text-center my-auto text-2xl" id="ammonia1">
+                        <?php foreach ($sql1 as $row) : echo $row['gas']; endforeach; ?> %
+                    </h3>
+                </div>
+            </div>
+            <div class="w-full lg:w-1/3 py-10 text-primary bg-section border-2 border-gray-300 rounded-lg my-4 lg:mx-2">
+                <h2 class="mx-auto text-2xl text-center my-auto font-bold">
+                    Sensor 2
+                </h2>
+                <div class="w-full p-4 border-t border-gray-300 mt-4">
+                    <h3 class="text-center my-auto text-lg font-semibold">
                         Humidity
                     </h3>
-                    <h3 class="mx-auto text-center my-auto text-2xl" id="humidity2">
-                        <?php foreach ($sql2 as $row) :
-                            echo $row['kelembapan'];
-                        endforeach;
-                        ?> %
-                    </h3>
-                    <h3 class="mx-auto text-center my-auto text-lg">
-                        Temperature
-                    </h3>
-                    <h3 class="mx-auto text-center my-auto text-2xl" id="temperature2">
-                        <?php foreach ($sql2 as $row) :
-                            echo $row['suhu'];
-                        endforeach;
-                        ?> deg
-                    </h3>
-                    <h3 class="mx-auto text-center my-auto text-lg">
-                        Amonia Level
-                    </h3>
-                    <h3 class="mx-auto text-center my-auto text-2xl" id="ammoni2">
-                        <?php foreach ($sql2 as $row) :
-                            echo $row['gas'];
-                        endforeach;
-                        ?> %
+                    <h3 class="text-center my-auto text-2xl" id="humidity2">
+                        <?php foreach ($sql2 as $row) : echo $row['kelembapan']; endforeach; ?> %
                     </h3>
                 </div>
-                <div class="w-full py-10 md:flex md:flex-wrap text-primarybg bg-primaryText rounded-lg">
-                    <h2 class="mx-auto text-2xl text-center my-auto">
-                        Sensor 3
-                    </h2>
-                    <h3 class="mx-auto text-center my-auto text-lg">
+                <div class="w-full p-4 border-t border-gray-300">
+                    <h3 class="text-center my-auto text-lg font-semibold">
+                        Temperature
+                    </h3>
+                    <h3 class="text-center my-auto text-2xl" id="temperature2">
+                        <?php foreach ($sql2 as $row) : echo $row['suhu']; endforeach; ?> deg
+                    </h3>
+                </div>
+                <div class="w-full p-4 border-t border-gray-300">
+                    <h3 class="text-center my-auto text-lg font-semibold">
+                        Amonia Level
+                    </h3>
+                    <h3 class="text-center my-auto text-2xl" id="ammonia2">
+                        <?php foreach ($sql2 as $row) : echo $row['gas']; endforeach; ?> %
+                    </h3>
+                </div>
+            </div>
+            <div class="w-full lg:w-1/3 py-10 text-primary bg-section border-2 border-gray-300 rounded-lg my-4 lg:mx-2">
+                <h2 class="mx-auto text-2xl text-center my-auto font-bold">
+                    Sensor 3
+                </h2>
+                <div class="w-full p-4 border-t border-gray-300 mt-4">
+                    <h3 class="text-center my-auto text-lg font-semibold">
                         Humidity
                     </h3>
-                    <h3 class="mx-auto text-center my-auto text-2xl" id="humidity3">
-                        <?php foreach ($sql3 as $row) :
-                            echo $row['kelembapan'];
-                        endforeach;
-                        ?> %
-                    </h3>
-                    <h3 class="mx-auto text-center my-auto text-lg">
-                        Temperature
-                    </h3>
-                    <h3 class="mx-auto text-center my-auto text-2xl" id="temperature3">
-                        <?php foreach ($sql3 as $row) :
-                            echo $row['suhu'];
-                        endforeach;
-                        ?> deg
-                    </h3>
-                    <h3 class="mx-auto text-center my-auto text-lg">
-                        Amonia Level
-                    </h3>
-                    <h3 class="mx-auto text-center my-auto text-2xl" id="ammonia3">
-                        <?php foreach ($sql3 as $row) :
-                            echo $row['gas'];
-                        endforeach;
-                        ?> %
+                    <h3 class="text-center my-auto text-2xl" id="humidity3">
+                        <?php foreach ($sql3 as $row) : echo $row['kelembapan']; endforeach; ?> %
                     </h3>
                 </div>
-
-                <div class="w-full flex flex-wrap p-10">
-                    <div class="mx-auto justify-center">
-                        <button type="button" class="text-gray-900 bg-primaryText border border-gray-300 
-                    focus:outline-none hover:bg-primarybg hover:text-primaryText focus:ring-4 focus:ring-gray-100 font-medium rounded-full 
-                    text-sm px-10 py-2.5 me-2 mb-2 self-center"><a href="graphic.php">Graphic Record</a></button>
-                    </div>
-                    <div class="mx-auto justify-center">
-                        <button type="button" class="text-gray-900 bg-primaryText border border-gray-300 
-                    focus:outline-none hover:bg-primarybg hover:text-primaryText focus:ring-4 focus:ring-gray-100 font-medium rounded-full 
-                    text-sm px-10 py-2.5 me-2 mb-2 self-center"><a href="record.php">Table Record</a></button>
-                    </div>
+                <div class="w-full p-4 border-t border-gray-300">
+                    <h3 class="text-center my-auto text-lg font-semibold">
+                        Temperature
+                    </h3>
+                    <h3 class="text-center my-auto text-2xl" id="temperature3">
+                        <?php foreach ($sql3 as $row) : echo $row['suhu']; endforeach; ?> deg
+                    </h3>
+                </div>
+                <div class="w-full p-4 border-t border-gray-300">
+                    <h3 class="text-center my-auto text-lg font-semibold">
+                        Amonia Level
+                    </h3>
+                    <h3 class="text-center my-auto text-2xl" id="ammonia3">
+                        <?php foreach ($sql3 as $row) : echo $row['gas']; endforeach; ?> %
+                    </h3>
                 </div>
             </div>
         </div>
-    </section>
+        <div class="w-full flex flex-wrap p-10">
+            <div class="mx-auto justify-center">
+                <button type="button" class="text-button bg-button border border-gray-300 focus:outline-none hover:bg-gray-700 hover:text-white focus:ring-4 focus:ring-gray-100 font-medium rounded-full text-sm px-10 py-2.5 me-2 mb-2 self-center">
+                    <a href="graphic.php" class="font-bold">Graphic Record</a>
+                </button>
+            </div>
+            <div class="mx-auto justify-center">
+                <button type="button" class="text-button bg-button border border-gray-300 focus:outline-none hover:bg-gray-700 hover:text-white focus:ring-4 focus:ring-gray-100 font-medium rounded-full text-sm px-10 py-2.5 me-2 mb-2 self-center">
+                    <a href="record.php" class="font-bold">Table Record</a>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>  
     <!-- FOOTER START -->
     <?php
     include('footer.php');
