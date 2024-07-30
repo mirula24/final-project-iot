@@ -1,5 +1,5 @@
 <?php
-$connect = mysqli_connect('localhost', 'root', '', 'esp32');
+$connect = mysqli_connect('127.0.0.1', 'u409509851_admin', 'admin123Am', 'u409509851_esp32');
 
 function query($data)
 {
